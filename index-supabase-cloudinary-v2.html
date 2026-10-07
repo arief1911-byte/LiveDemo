@@ -48,9 +48,9 @@
 </section>
 </div>
 <script>
-const SUPABASE_URL='https://YOUR-SUPABASE-PROJECT.supabase.co';
-const SUPABASE_ANON_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZob2Z1emF0Y2l4YWRwdHd0Z3Z5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAzNjM2MDUsImV4cCI6MjEwNTkzOTYwNX0.ZgZyGLtXSLzZzKtqjfzyqmYktvJvUXRjCgT9Gr53nog';
-const CLOUDINARY_CLOUD_NAME='YOUR-CLOUDINARY-CLOUD',CLOUDINARY_UPLOAD_PRESET='kanri-employee-upload';
+const SUPABASE_URL='https://tnkpqactdbfptqyftokx.supabase.co';
+const SUPABASE_ANON_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRua3BxYWN0ZGJmcHRxeWZ0b2t4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTEzMTg0NzAsImV4cCI6MjEwNjg5NDQ3MH0.bHXBViwcNRfqXTljmBxvW8iTIBtDxjIOsgTXkLadoks';
+const CLOUDINARY_CLOUD_NAME='vj6c3njz',CLOUDINARY_UPLOAD_PRESET='livedemo';
 const sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);let user=null,employee=null,report=null,actPhoto=null,inPhoto=null,outPhoto=null;
 const $=id=>document.getElementById(id), esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),months=['','Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
 const today=()=>{let d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};const fmt=d=>{if(!d)return'-';let x=new Date(d+'T00:00:00');return String(x.getDate()).padStart(2,'0')+'/'+String(x.getMonth()+1).padStart(2,'0')+'/'+x.getFullYear()};
