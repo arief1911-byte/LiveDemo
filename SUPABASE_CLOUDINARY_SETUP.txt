@@ -1,0 +1,35 @@
+SETUP MIGRASI LAPORAN KEGIATAN
+
+1. SUPABASE
+- Buat project Supabase.
+- Buka SQL Editor.
+- Salin SQL yang ada di komentar pada index-supabase-cloudinary.html.
+- Jalankan SQL.
+- Authentication > Providers: aktifkan Email.
+- Ambil Project URL dan Publishable/Anon key dari Project Settings > API.
+
+2. CLOUDINARY
+- Buat akun Cloudinary.
+- Buat Upload Preset.
+- Set Signing Mode = Unsigned.
+- Catat Cloud Name dan nama Upload Preset.
+
+3. INDEX.HTML
+Di bagian konfigurasi:
+SUPABASE_URL = URL project
+SUPABASE_ANON_KEY = key frontend
+CLOUDINARY_CLOUD_NAME = Cloud Name
+CLOUDINARY_UPLOAD_PRESET = unsigned preset
+
+Jangan masukkan Supabase service_role key atau Cloudinary API secret ke HTML.
+
+4. CARA KERJA
+- User register/login melalui Supabase Auth.
+- Data kegiatan disimpan di PostgreSQL Supabase.
+- Foto dikompres di browser lalu diupload langsung ke Cloudinary.
+- Supabase menyimpan foto_url dan foto_public_id.
+- RLS membatasi user agar hanya dapat mengakses data miliknya.
+- Export Word tetap dibuat di browser.
+
+5. ADMIN
+Versi ini sudah menyiapkan fondasi multi-user, tetapi belum menambahkan dashboard admin untuk melihat semua user. RLS saat ini sengaja membatasi setiap user ke data miliknya. Admin dashboard sebaiknya dibuat setelah skema role admin ditentukan.
