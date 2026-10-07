@@ -28,10 +28,10 @@ Never expose the Cloudinary API secret.
 
 ## Vercel
 Import the GitHub repository and add these Production Environment Variables:
-- `VITE_SUPABASE_URL`
-- `VITE_SUPABASE_ANON_KEY`
-- `VITE_CLOUDINARY_CLOUD_NAME`
-- `VITE_CLOUDINARY_UPLOAD_PRESET`
+- `VITE_SUPABASE_URL` (recommended), or `NEXT_PUBLIC_SUPABASE_URL`
+- `VITE_SUPABASE_ANON_KEY` (recommended), or `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `VITE_CLOUDINARY_CLOUD_NAME` (recommended), or `NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME`
+- `VITE_CLOUDINARY_UPLOAD_PRESET` (recommended), or `NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET`
 
 Build command: `npm run build`
 Output directory: `dist`

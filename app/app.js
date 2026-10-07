@@ -2,12 +2,11 @@
    KONFIGURASI - ISI SEBELUM DEPLOY (lihat langkah setup)
    ========================================================= */
 const CONFIG = window.APP_CONFIG || {};
-if (!CONFIG.SUPABASE_URL || !CONFIG.SUPABASE_ANON_KEY ||
-    !CONFIG.CLOUDINARY_CLOUD_NAME || !CONFIG.CLOUDINARY_UPLOAD_PRESET) {
-  console.error('APP_CONFIG belum lengkap.', CONFIG);
+if (!CONFIG.SUPABASE_URL || !CONFIG.SUPABASE_ANON_KEY) {
+  console.error('Konfigurasi Supabase belum lengkap.', CONFIG);
   document.addEventListener('DOMContentLoaded', () => {
     const el = document.getElementById('loginStatus');
-    if (el) el.textContent = 'Konfigurasi deployment belum lengkap. Set Vercel Environment Variables.';
+    if (el) el.textContent = 'Konfigurasi Supabase belum lengkap. Periksa Environment Variables Vercel.';
   });
 }
 const sb = (CONFIG.SUPABASE_URL && CONFIG.SUPABASE_ANON_KEY)
